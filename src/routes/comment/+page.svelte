@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CommentSection from "./CommentSection.svelte";
+import CommentSection from "./CommentSection.svelte";
 import Post from "./Post.svelte";
 
 
@@ -7,16 +7,6 @@ import Post from "./Post.svelte";
 
 
 <div class="container">
-    <!-- <div class="form">
-        <div>
-            <h4>Name:</h4>
-            <input type="text" />
-        </div>
-        <div>
-            <h4>Post:</h4>
-            <input type="text" />
-        </div>
-    </div> -->
     <div class="post-section">
         <Post />
     </div>

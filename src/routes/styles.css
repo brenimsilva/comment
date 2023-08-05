@@ -8,6 +8,9 @@
 	--column-margin-top: 4rem;
 	font-family: 'Roboto', sans-serif;
 	color: var(--color-text);
+	    --primary: #4c6fff;
+        --gray: #f1f4f8;
+        --text: #99a8b5;
 }
 
 body {
