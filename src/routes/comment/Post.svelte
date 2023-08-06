@@ -61,7 +61,7 @@ $: {
     }
     hr {
         margin: 10px;
-        border: 1px solid goldenrod;
+        border: 1px solid rgba(108, 108, 241, 0.616);
     }
     .title {
         font-size: xx-large;
