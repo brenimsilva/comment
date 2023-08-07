@@ -2,6 +2,12 @@
 import CommentSection from "./CommentSection.svelte";
 import Post from "./Post.svelte";
 
+export let data;
+let products;
+$: {
+    products = data.products
+}
+
 
 </script>
 

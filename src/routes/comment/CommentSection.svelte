@@ -1,18 +1,24 @@
-<script>
+<script lang="ts">
+	import Comment from "./Comment.svelte";
 	import CommentsByPost from "./CommentsByPost.svelte";
+	import type { TComment } from "./Interfaces";
 
-
+    let comments: TComment[] = [
+        {author: "Breno", profilePicture: "profile.jpg", text: "Melhor artigo que ja li", replies: [{author: "Thamyres", profilePicture: "gatinha.jpg", text: "Muito bom esse artigo", replies: []}]},
+        {author: "Vini", profilePicture: "vini.jpg", text: "Temos que tentar entender melhor sua utilização", replies: []},
+        {author: "Patrik", profilePicture: "patrik.jpeg", text: "De fato faz sentido", replies: []},
+        ];
+        let text: string;
+        let obj: TComment;
+        $: obj = {author: "Breno", profilePicture: "profile.jpg", text: text, replies: []};
 </script>
 
 
 <div class="container">
     <h1>Comments</h1>
-    <textarea class="comment" placeholder="Compartilhe sua opinião sobre"/>
-    <CommentsByPost commentList={[
-        {author: "Breno", profilePicture: "profile.jpg", text: "Melhor artigo que ja li", replies: [{author: "Thamyres", profilePicture: "gatinha.jpg", text: "Muito bom esse artigo", replies: []}]},
-        {author: "Vini", profilePicture: "vini.jpg", text: "Temos que tentar entender melhor sua utilização", replies: []},
-        {author: "Patrik", profilePicture: "patrik.jpeg", text: "De fato faz sentido", replies: []},
-        ]}/>
+    <textarea class="comment" placeholder="Compartilhe sua opinião sobre" bind:value={text}/>
+    <button on:click={() => {comments = [...comments, obj]}}>></button>
+    <CommentsByPost commentList={comments}/>
 </div>
 
 <style>
